@@ -240,8 +240,8 @@ var NotificationItem = React.createClass({
 
   render: function() {
     var notification = this.props.notification;
-    var className = 'notification notification-' + notification.level;
-    var notificationStyle = merge({}, this._styles.notification);
+    var className = 'notification is-' + notification.level;
+    // var notificationStyle = merge({}, this._styles.notification);
     var cssByPos = this._getCssPropertyByPosition();
     var dismiss = null;
     var actionButton = null;
@@ -295,7 +295,7 @@ var NotificationItem = React.createClass({
     }
 
     if (notification.dismissible) {
-      dismiss = <span className="notification-dismiss" style={ this._styles.dismiss }>&times;</span>;
+      dismiss = <span className="delete" />;
     }
 
     if (notification.action) {
