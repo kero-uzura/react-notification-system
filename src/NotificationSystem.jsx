@@ -98,7 +98,7 @@ var NotificationSystem = React.createClass({
     return {
       style: {},
       noAnimation: false,
-      allowHTML: false
+      allowHTML: true
     };
   },
 
