@@ -1,24 +1,24 @@
 // Used for calculations
 var defaultWidth = 320;
-var defaultColors = {
-  success: {
-    rgb: '94, 164, 0',
-    hex: '#5ea400'
-  },
-  danger: {
-    rgb: '236, 61, 61',
-    hex: '#ec3d3d'
-  },
-  warning: {
-    rgb: '235, 173, 23',
-    hex: '#ebad1a'
-  },
-  info: {
-    rgb: '54, 156, 199',
-    hex: '#369cc7'
-  }
-};
-var defaultShadowOpacity = '0.9';
+// var defaultColors = {
+//   success: {
+//     rgb: '94, 164, 0',
+//     hex: '#5ea400'
+//   },
+//   danger: {
+//     rgb: '236, 61, 61',
+//     hex: '#ec3d3d'
+//   },
+//   warning: {
+//     rgb: '235, 173, 23',
+//     hex: '#ebad1a'
+//   },
+//   info: {
+//     rgb: '54, 156, 199',
+//     hex: '#369cc7'
+//   }
+// };
+// var defaultShadowOpacity = '0.9';
 
 var STYLES = {
 
@@ -108,7 +108,7 @@ var STYLES = {
       isVisible: {
         opacity: 1
       }
-    },
+    }
 
     // success: {
     //   borderTop: '2px solid ' + defaultColors.success.hex,
@@ -153,24 +153,7 @@ var STYLES = {
       margin: '0 0 5px 0',
       padding: 0,
       fontWeight: 'bold'
-    },
-
-    success: {
-      color: defaultColors.success.hex
-    },
-
-    danger: {
-      color: defaultColors.danger.hex
-    },
-
-    warning: {
-      color: defaultColors.warning.hex
-    },
-
-    info: {
-      color: defaultColors.info.hex
     }
-
   },
 
   MessageWrapper: {
@@ -220,32 +203,12 @@ var STYLES = {
 
   Action: {
     DefaultStyle: {
-      background: '#ffffff',
-      borderRadius: '2px',
-      padding: '6px 20px',
-      fontWeight: 'bold',
-      margin: '10px 0 0 0',
-      border: 0
-    },
-
-    success: {
-      backgroundColor: defaultColors.success.hex,
-      color: '#ffffff'
-    },
-
-    danger: {
-      backgroundColor: defaultColors.danger.hex,
-      color: '#ffffff'
-    },
-
-    warning: {
-      backgroundColor: defaultColors.warning.hex,
-      color: '#ffffff'
-    },
-
-    info: {
-      backgroundColor: defaultColors.info.hex,
-      color: '#ffffff'
+      // background: '#ffffff',
+      // borderRadius: '2px',
+      // padding: '6px 20px',
+      // fontWeight: 'bold',
+      margin: '10px 0 0 0'
+      // border: 0
     }
   },
 
