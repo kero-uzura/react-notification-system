@@ -5,7 +5,7 @@ var defaultColors = {
     rgb: '94, 164, 0',
     hex: '#5ea400'
   },
-  error: {
+  danger: {
     rgb: '236, 61, 61',
     hex: '#ec3d3d'
   },
@@ -25,7 +25,7 @@ var STYLES = {
   Wrapper: {},
   Containers: {
     DefaultStyle: {
-      fontFamily: 'inherit',
+      // fontFamily: 'inherit',
       position: 'fixed',
       width: defaultWidth,
       padding: '0 10px 10px 10px',
@@ -87,10 +87,10 @@ var STYLES = {
       position: 'relative',
       width: '100%',
       cursor: 'pointer',
-      borderRadius: '2px',
+      // borderRadius: '2px',
       fontSize: '13px',
-      margin: '10px 0 0',
-      padding: '10px',
+      // margin: '10px 0 0',
+      // padding: '10px',
       display: 'block',
       WebkitBoxSizing: 'border-box',
       MozBoxSizing: 'border-box',
@@ -110,41 +110,41 @@ var STYLES = {
       }
     },
 
-    success: {
-      borderTop: '2px solid ' + defaultColors.success.hex,
-      backgroundColor: '#f0f5ea',
-      color: '#4b583a',
-      WebkitBoxShadow: '0 0 1px rgba(' + defaultColors.success.rgb + ',' + defaultShadowOpacity + ')',
-      MozBoxShadow: '0 0 1px rgba(' + defaultColors.success.rgb + ',' + defaultShadowOpacity + ')',
-      boxShadow: '0 0 1px rgba(' + defaultColors.success.rgb + ',' + defaultShadowOpacity + ')'
-    },
+    // success: {
+    //   borderTop: '2px solid ' + defaultColors.success.hex,
+    //   backgroundColor: '#f0f5ea',
+    //   color: '#4b583a',
+    //   WebkitBoxShadow: '0 0 1px rgba(' + defaultColors.success.rgb + ',' + defaultShadowOpacity + ')',
+    //   MozBoxShadow: '0 0 1px rgba(' + defaultColors.success.rgb + ',' + defaultShadowOpacity + ')',
+    //   boxShadow: '0 0 1px rgba(' + defaultColors.success.rgb + ',' + defaultShadowOpacity + ')'
+    // },
 
-    error: {
-      borderTop: '2px solid ' + defaultColors.error.hex,
-      backgroundColor: '#f4e9e9',
-      color: '#412f2f',
-      WebkitBoxShadow: '0 0 1px rgba(' + defaultColors.error.rgb + ',' + defaultShadowOpacity + ')',
-      MozBoxShadow: '0 0 1px rgba(' + defaultColors.error.rgb + ',' + defaultShadowOpacity + ')',
-      boxShadow: '0 0 1px rgba(' + defaultColors.error.rgb + ',' + defaultShadowOpacity + ')'
-    },
+    // danger: {
+    //   borderTop: '2px solid ' + defaultColors.danger.hex,
+    //   backgroundColor: '#f4e9e9',
+    //   color: '#412f2f',
+    //   WebkitBoxShadow: '0 0 1px rgba(' + defaultColors.danger.rgb + ',' + defaultShadowOpacity + ')',
+    //   MozBoxShadow: '0 0 1px rgba(' + defaultColors.danger.rgb + ',' + defaultShadowOpacity + ')',
+    //   boxShadow: '0 0 1px rgba(' + defaultColors.danger.rgb + ',' + defaultShadowOpacity + ')'
+    // },
 
-    warning: {
-      borderTop: '2px solid ' + defaultColors.warning.hex,
-      backgroundColor: '#f9f6f0',
-      color: '#5a5343',
-      WebkitBoxShadow: '0 0 1px rgba(' + defaultColors.warning.rgb + ',' + defaultShadowOpacity + ')',
-      MozBoxShadow: '0 0 1px rgba(' + defaultColors.warning.rgb + ',' + defaultShadowOpacity + ')',
-      boxShadow: '0 0 1px rgba(' + defaultColors.warning.rgb + ',' + defaultShadowOpacity + ')'
-    },
+    // warning: {
+    //   borderTop: '2px solid ' + defaultColors.warning.hex,
+    //   backgroundColor: '#f9f6f0',
+    //   color: '#5a5343',
+    //   WebkitBoxShadow: '0 0 1px rgba(' + defaultColors.warning.rgb + ',' + defaultShadowOpacity + ')',
+    //   MozBoxShadow: '0 0 1px rgba(' + defaultColors.warning.rgb + ',' + defaultShadowOpacity + ')',
+    //   boxShadow: '0 0 1px rgba(' + defaultColors.warning.rgb + ',' + defaultShadowOpacity + ')'
+    // },
 
-    info: {
-      borderTop: '2px solid ' + defaultColors.info.hex,
-      backgroundColor: '#e8f0f4',
-      color: '#41555d',
-      WebkitBoxShadow: '0 0 1px rgba(' + defaultColors.info.rgb + ',' + defaultShadowOpacity + ')',
-      MozBoxShadow: '0 0 1px rgba(' + defaultColors.info.rgb + ',' + defaultShadowOpacity + ')',
-      boxShadow: '0 0 1px rgba(' + defaultColors.info.rgb + ',' + defaultShadowOpacity + ')'
-    }
+    // info: {
+    //   borderTop: '2px solid ' + defaultColors.info.hex,
+    //   backgroundColor: '#e8f0f4',
+    //   color: '#41555d',
+    //   WebkitBoxShadow: '0 0 1px rgba(' + defaultColors.info.rgb + ',' + defaultShadowOpacity + ')',
+    //   MozBoxShadow: '0 0 1px rgba(' + defaultColors.info.rgb + ',' + defaultShadowOpacity + ')',
+    //   boxShadow: '0 0 1px rgba(' + defaultColors.info.rgb + ',' + defaultShadowOpacity + ')'
+    // }
   },
 
   Title: {
@@ -159,8 +159,8 @@ var STYLES = {
       color: defaultColors.success.hex
     },
 
-    error: {
-      color: defaultColors.error.hex
+    danger: {
+      color: defaultColors.danger.hex
     },
 
     warning: {
@@ -180,43 +180,43 @@ var STYLES = {
     }
   },
 
-  Dismiss: {
-    DefaultStyle: {
-      fontFamily: 'Arial',
-      fontSize: '17px',
-      position: 'absolute',
-      top: '4px',
-      right: '5px',
-      lineHeight: '15px',
-      backgroundColor: '#dededf',
-      color: '#ffffff',
-      borderRadius: '50%',
-      width: '14px',
-      height: '14px',
-      fontWeight: 'bold',
-      textAlign: 'center'
-    },
+  // Dismiss: {
+  //   DefaultStyle: {
+  //     fontFamily: 'Arial',
+  //     fontSize: '17px',
+  //     position: 'absolute',
+  //     top: '4px',
+  //     right: '5px',
+  //     lineHeight: '15px',
+  //     backgroundColor: '#dededf',
+  //     color: '#ffffff',
+  //     borderRadius: '50%',
+  //     width: '14px',
+  //     height: '14px',
+  //     fontWeight: 'bold',
+  //     textAlign: 'center'
+  //   },
 
-    success: {
-      color: '#f0f5ea',
-      backgroundColor: '#b0ca92'
-    },
+  //   success: {
+  //     color: '#f0f5ea',
+  //     backgroundColor: '#b0ca92'
+  //   },
 
-    error: {
-      color: '#f4e9e9',
-      backgroundColor: '#e4bebe'
-    },
+  //   danger: {
+  //     color: '#f4e9e9',
+  //     backgroundColor: '#e4bebe'
+  //   },
 
-    warning: {
-      color: '#f9f6f0',
-      backgroundColor: '#e1cfac'
-    },
+  //   warning: {
+  //     color: '#f9f6f0',
+  //     backgroundColor: '#e1cfac'
+  //   },
 
-    info: {
-      color: '#e8f0f4',
-      backgroundColor: '#a4becb'
-    }
-  },
+  //   info: {
+  //     color: '#e8f0f4',
+  //     backgroundColor: '#a4becb'
+  //   }
+  // },
 
   Action: {
     DefaultStyle: {
@@ -233,8 +233,8 @@ var STYLES = {
       color: '#ffffff'
     },
 
-    error: {
-      backgroundColor: defaultColors.error.hex,
+    danger: {
+      backgroundColor: defaultColors.danger.hex,
       color: '#ffffff'
     },
 
