@@ -4,7 +4,7 @@ var NotificationContainer = require('./NotificationContainer');
 var Constants = require('./constants');
 var Styles = require('./styles');
 
-var NotificationSystem = React.createClass({
+var NotificationSystem = React.createClass({displayName: "NotificationSystem",
 
   uid: 3400,
 
@@ -98,7 +98,7 @@ var NotificationSystem = React.createClass({
     return {
       style: {},
       noAnimation: false,
-      allowHTML: true
+      allowHTML: false
     };
   },
 
@@ -202,25 +202,25 @@ var NotificationSystem = React.createClass({
         }
 
         return (
-          <NotificationContainer
-            ref={ 'container-' + position }
-            key={ position }
-            position={ position }
-            notifications={ _notifications }
-            getStyles={ self._getStyles }
-            onRemove={ self._didNotificationRemoved }
-            noAnimation={ self.props.noAnimation }
-            allowHTML={ self.props.allowHTML }
-          />
+          React.createElement(NotificationContainer, {
+            ref:  'container-' + position, 
+            key:  position, 
+            position:  position, 
+            notifications:  _notifications, 
+            getStyles:  self._getStyles, 
+            onRemove:  self._didNotificationRemoved, 
+            noAnimation:  self.props.noAnimation, 
+            allowHTML:  self.props.allowHTML}
+          )
         );
       });
     }
 
 
     return (
-      <div className="notifications-wrapper" style={ this._getStyles.wrapper() }>
-        { containers }
-      </div>
+      React.createElement("div", {className: "notifications-wrapper", style:  this._getStyles.wrapper() }, 
+         containers 
+      )
 
     );
   }

@@ -24,7 +24,7 @@ var whichTransitionEvent = function() {
   return transition;
 };
 
-var NotificationItem = React.createClass({
+var NotificationItem = React.createClass({displayName: "NotificationItem",
 
   propTypes: {
     notification: React.PropTypes.object,
@@ -240,7 +240,7 @@ var NotificationItem = React.createClass({
 
   render: function() {
     var notification = this.props.notification;
-    var className = 'notification is-' + Constants.levels[notification.level];
+    var className = 'notification is-' + notification.level;
     var notificationStyle = merge({}, this._styles.notification);
     var cssByPos = this._getCssPropertyByPosition();
     var dismiss = null;
@@ -264,13 +264,13 @@ var NotificationItem = React.createClass({
       }
 
       if (this.state.visible && !this.state.removed) {
-        notificationStyle.height = this._height;
+        // notificationStyle.height = this._height;
         notificationStyle[cssByPos.property] = 0;
       }
 
       if (this.state.removed) {
         notificationStyle.overlay = 'hidden';
-        notificationStyle.height = 0;
+        // notificationStyle.height = 0;
         notificationStyle.marginTop = 0;
         notificationStyle.paddingTop = 0;
         notificationStyle.paddingBottom = 0;
@@ -279,34 +279,34 @@ var NotificationItem = React.createClass({
     }
 
     if (notification.title) {
-      title = <h4 className="notification-title" style={ this._styles.title } dangerouslySetInnerHTML={ this._allowHTML(notification.title) } />;
+      title = React.createElement("h4", {className: "notification-title", style:  this._styles.title},  notification.title);
     }
 
     if (notification.message) {
       if (this.props.allowHTML) {
         message = (
-          <div className="notification-message" style={ this._styles.messageWrapper } dangerouslySetInnerHTML={ this._allowHTML(notification.message) } />
+          React.createElement("div", {className: "notification-message", style:  this._styles.messageWrapper, dangerouslySetInnerHTML:  this._allowHTML(notification.message) })
         );
       } else {
         message = (
-          <div className="notification-message" style={ this._styles.messageWrapper }>{ notification.message }</div>
+          React.createElement("div", {className: "notification-message", style:  this._styles.messageWrapper},  notification.message)
         );
       }
     }
 
     if (notification.dismissible) {
-      dismiss = <span className="delete" />;
+      dismiss = React.createElement("span", {className: "delete"});
     }
 
     if (notification.action) {
       actionButton = (
-        <div className="notification-action-wrapper" style={ this._styles.actionWrapper }>
-          <button className={ `notification-action-button button is-inverted is-${ Constants.levels[notification.level] }` }
-            onClick={ this._defaultAction }
-            style={ this._styles.action }>
-              { notification.action.label }
-          </button>
-        </div>
+        React.createElement("div", {className: "notification-action-wrapper", style:  this._styles.actionWrapper}, 
+          React.createElement("button", {className:  `notification-action-button button is-inverted is-${ notification.level }`, 
+            onClick:  this._defaultAction, 
+            style:  this._styles.action}, 
+               notification.action.label
+          )
+        )
       );
     }
 
@@ -315,12 +315,12 @@ var NotificationItem = React.createClass({
     }
 
     return (
-      <div className={ className } onClick={ this._dismiss } onMouseEnter={ this._handleMouseEnter } onMouseLeave={ this._handleMouseLeave } style={ notificationStyle }>
-        { title }
-        { message }
-        { dismiss }
-        { actionButton }
-      </div>
+      React.createElement("div", {className:  className, onClick:  this._dismiss, onMouseEnter:  this._handleMouseEnter, onMouseLeave:  this._handleMouseLeave, style:  notificationStyle }, 
+         title, 
+         message, 
+         dismiss, 
+         actionButton 
+      )
     );
   }
 
