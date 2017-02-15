@@ -270,7 +270,7 @@ var NotificationItem = React.createClass({displayName: "NotificationItem",
 
       if (this.state.removed) {
         notificationStyle.overlay = 'hidden';
-        notificationStyle.height = 0;
+        // notificationStyle.height = 0;
         notificationStyle.marginTop = 0;
         notificationStyle.paddingTop = 0;
         notificationStyle.paddingBottom = 0;

@@ -13,7 +13,7 @@ var CONSTANTS = {
   // Levels
   levels: {
     success: 'success',
-    error: 'error',
+    error: 'danger',
     warning: 'warning',
     info: 'info'
   },
