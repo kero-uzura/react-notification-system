@@ -163,8 +163,8 @@ var STYLES = {
     }
   },
 
-  // Dismiss: {
-  //   DefaultStyle: {
+  Dismiss: {
+    DefaultStyle: {
   //     fontFamily: 'Arial',
   //     fontSize: '17px',
   //     position: 'absolute',
@@ -178,7 +178,7 @@ var STYLES = {
   //     height: '14px',
   //     fontWeight: 'bold',
   //     textAlign: 'center'
-  //   },
+    }
 
   //   success: {
   //     color: '#f0f5ea',
@@ -200,6 +200,7 @@ var STYLES = {
   //     backgroundColor: '#a4becb'
   //   }
   // },
+  },
 
   Action: {
     DefaultStyle: {
