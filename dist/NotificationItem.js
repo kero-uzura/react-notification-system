@@ -240,7 +240,7 @@ var NotificationItem = React.createClass({displayName: "NotificationItem",
 
   render: function() {
     var notification = this.props.notification;
-    var className = 'notification notification-' + notification.level;
+    var className = 'notification is-' + notification.level;
     var notificationStyle = merge({}, this._styles.notification);
     var cssByPos = this._getCssPropertyByPosition();
     var dismiss = null;
@@ -264,7 +264,7 @@ var NotificationItem = React.createClass({displayName: "NotificationItem",
       }
 
       if (this.state.visible && !this.state.removed) {
-        notificationStyle.height = this._height;
+        // notificationStyle.height = this._height;
         notificationStyle[cssByPos.property] = 0;
       }
 
@@ -295,13 +295,13 @@ var NotificationItem = React.createClass({displayName: "NotificationItem",
     }
 
     if (notification.dismissible) {
-      dismiss = React.createElement("span", {className: "notification-dismiss", style:  this._styles.dismiss}, "×");
+      dismiss = React.createElement("span", {className: "delete"});
     }
 
     if (notification.action) {
       actionButton = (
         React.createElement("div", {className: "notification-action-wrapper", style:  this._styles.actionWrapper}, 
-          React.createElement("button", {className: "notification-action-button", 
+          React.createElement("button", {className:  `notification-action-button button is-inverted is-${ notification.level }`, 
             onClick:  this._defaultAction, 
             style:  this._styles.action}, 
                notification.action.label

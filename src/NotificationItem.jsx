@@ -241,7 +241,7 @@ var NotificationItem = React.createClass({
   render: function() {
     var notification = this.props.notification;
     var className = 'notification is-' + notification.level;
-    // var notificationStyle = merge({}, this._styles.notification);
+    var notificationStyle = merge({}, this._styles.notification);
     var cssByPos = this._getCssPropertyByPosition();
     var dismiss = null;
     var actionButton = null;
@@ -264,7 +264,7 @@ var NotificationItem = React.createClass({
       }
 
       if (this.state.visible && !this.state.removed) {
-        notificationStyle.height = this._height;
+        // notificationStyle.height = this._height;
         notificationStyle[cssByPos.property] = 0;
       }
 
@@ -301,7 +301,7 @@ var NotificationItem = React.createClass({
     if (notification.action) {
       actionButton = (
         <div className="notification-action-wrapper" style={ this._styles.actionWrapper }>
-          <button className="notification-action-button"
+          <button className={ `notification-action-button button is-inverted is-${ notification.level }` }
             onClick={ this._defaultAction }
             style={ this._styles.action }>
               { notification.action.label }
