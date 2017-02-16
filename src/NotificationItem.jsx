@@ -299,9 +299,10 @@ var NotificationItem = React.createClass({
     }
 
     if (notification.action) {
+      const actionButtonClass = 'notification-action-button button is-inverted is-' + Constants.levels[notification.level];
       actionButton = (
         <div className="notification-action-wrapper" style={ this._styles.actionWrapper }>
-          <button className={ `notification-action-button button is-inverted is-${ Constants.levels[notification.level] }` }
+          <button className={ actionButtonClass }
             onClick={ this._defaultAction }
             style={ this._styles.action }>
               { notification.action.label }
