@@ -1,8 +1,9 @@
 var React = require('react');
+var createReactClass = require('create-react-class');
 var NotificationItem = require('./NotificationItem');
 var Constants = require('./constants');
 
-var NotificationContainer = React.createClass({displayName: "NotificationContainer",
+var NotificationContainer = createReactClass({
 
   propTypes: {
     position: React.PropTypes.string.isRequired,

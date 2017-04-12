@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/igorprado/react-notification-system",
   "dependencies": {
+    "create-react-class": "^15.5.2",
     "object-assign": "^4.0.1"
   },
   "peerDependencies": {

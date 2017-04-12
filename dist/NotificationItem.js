@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var createReactClass = require('create-react-class');
 var Constants = require('./constants');
 var Helpers = require('./helpers');
 var merge = require('object-assign');
@@ -24,7 +25,7 @@ var whichTransitionEvent = function() {
   return transition;
 };
 
-var NotificationItem = React.createClass({displayName: "NotificationItem",
+var NotificationItem = createReactClass({
 
   propTypes: {
     notification: React.PropTypes.object,
@@ -48,7 +49,7 @@ var NotificationItem = React.createClass({displayName: "NotificationItem",
 
   getInitialState: function() {
     return {
-      visible: false,
+      visible: undefined,
       removed: false
     };
   },
@@ -240,7 +241,7 @@ var NotificationItem = React.createClass({displayName: "NotificationItem",
 
   render: function() {
     var notification = this.props.notification;
-    var className = 'notification is-' + notification.level;
+    var className = 'notification is-' + Constants.levels[notification.level];
     var notificationStyle = merge({}, this._styles.notification);
     var cssByPos = this._getCssPropertyByPosition();
     var dismiss = null;
@@ -250,7 +251,7 @@ var NotificationItem = React.createClass({displayName: "NotificationItem",
 
     if (this.state.visible) {
       className += ' notification-visible';
-    } else {
+    } else if (this.state.visible === false) {
       className += ' notification-hidden';
     }
 
@@ -264,13 +265,13 @@ var NotificationItem = React.createClass({displayName: "NotificationItem",
       }
 
       if (this.state.visible && !this.state.removed) {
-        // notificationStyle.height = this._height;
+        notificationStyle.height = this._height;
         notificationStyle[cssByPos.property] = 0;
       }
 
       if (this.state.removed) {
         notificationStyle.overlay = 'hidden';
-        // notificationStyle.height = 0;
+        notificationStyle.height = 0;
         notificationStyle.marginTop = 0;
         notificationStyle.paddingTop = 0;
         notificationStyle.paddingBottom = 0;
@@ -279,7 +280,7 @@ var NotificationItem = React.createClass({displayName: "NotificationItem",
     }
 
     if (notification.title) {
-      title = React.createElement("h4", {className: "notification-title", style:  this._styles.title},  notification.title);
+      title = React.createElement("h4", {className: "notification-title", style:  this._styles.title, dangerouslySetInnerHTML:  this._allowHTML(notification.title) });
     }
 
     if (notification.message) {
@@ -301,7 +302,7 @@ var NotificationItem = React.createClass({displayName: "NotificationItem",
     if (notification.action) {
       actionButton = (
         React.createElement("div", {className: "notification-action-wrapper", style:  this._styles.actionWrapper}, 
-          React.createElement("button", {className:  `notification-action-button button is-inverted is-${ notification.level }`, 
+          React.createElement("button", {className:  `notification-action-button button is-inverted is-${ Constants.levels[notification.level] }`, 
             onClick:  this._defaultAction, 
             style:  this._styles.action}, 
                notification.action.label

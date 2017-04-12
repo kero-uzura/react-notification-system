@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var createReactClass = require('create-react-class');
 var Constants = require('./constants');
 var Helpers = require('./helpers');
 var merge = require('object-assign');
@@ -24,7 +25,7 @@ var whichTransitionEvent = function() {
   return transition;
 };
 
-var NotificationItem = React.createClass({
+var NotificationItem = createReactClass({
 
   propTypes: {
     notification: React.PropTypes.object,

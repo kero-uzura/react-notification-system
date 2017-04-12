@@ -1,10 +1,11 @@
 var React = require('react');
 var merge = require('object-assign');
+var createReactClass = require('create-react-class');
 var NotificationContainer = require('./NotificationContainer');
 var Constants = require('./constants');
 var Styles = require('./styles');
 
-var NotificationSystem = React.createClass({displayName: "NotificationSystem",
+var NotificationSystem = createReactClass({
 
   uid: 3400,
 
@@ -98,7 +99,7 @@ var NotificationSystem = React.createClass({displayName: "NotificationSystem",
     return {
       style: {},
       noAnimation: false,
-      allowHTML: false
+      allowHTML: true
     };
   },
 
