@@ -2025,7 +2025,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          { className: 'notification-action-wrapper', style: this._styles.actionWrapper },
 	          React.createElement(
 	            'button',
-	            { className: 'notification-action-button button is-inverted is-' + String(Constants.levels[notification.level]),
+	            { className: 'notification-action-button button is-inverted is-' + Constants.levels[notification.level],
 	              onClick: this._defaultAction,
 	              style: this._styles.action },
 	            notification.action.label
